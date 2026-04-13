@@ -1,5 +1,3 @@
-# Curtis BTC Settings
-
 CURTIS_BTC_ADMIN_PASSWORD:
   type: string
   name: Admin Password
@@ -45,6 +43,6 @@ CURTIS_BTC_PRUNING_ENABLED:
 CURTIS_BTC_PRUNING_TARGET_GB:
   type: number
   name: Pruning Target (GB)
-  description: Target size for pruned blockchain in GB (minimum 5GB)
+  description: Target size for pruned blockchain in GB
   defaultValue: 50
   required: false

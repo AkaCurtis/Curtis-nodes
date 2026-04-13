@@ -7,7 +7,7 @@ This repository contains the Curtis BTC app for Umbrel - a professional Bitcoin 
 This repo is structured as an **Umbrel app store** repository with `umbrel-app-store.yml` at the root:
 
 ```
-Curtis-Umbrel/
+Curtis-nodes/
 ├── README.md                # This file
 ├── umbrel-app-store.yml     # App store manifest (REQUIRED)
 └── curtis-btc/              # App directory
@@ -41,7 +41,7 @@ To add this repository as a custom app store in Umbrel:
 
 1. **In Umbrel UI:**
    - Go to App Store → Community App Stores
-   - Add repository: `https://github.com/AkaCurtis/Curtis-Umbrel`
+   - Add repository: `https://github.com/AkaCurtis/Curtis-nodes`
 
 2. **Or via CLI:**
    ```bash
@@ -123,9 +123,9 @@ If you previously cloned this repo when files were at the root level:
    
    You should see:
    ```
-   .../Curtis-Umbrel/umbrel-app-store.yml
-   .../Curtis-Umbrel/curtis-btc/umbrel-app.yml
-   ``
+   .../Curtis-nodes/umbrel-app-store.yml
+   .../Curtis-nodes/curtis-btc/umbrel-app.yml
+   ```
 1. **Check directory structure:**
    ```bash
    find /home/umbrel/umbrel/app-stores -name "umbrel-app.yml"
@@ -149,8 +149,8 @@ If icons are missing, the app requires these files in `curtis-btc/`:
 ## 🔗 Links
 
 - **App ID:** `curtis-btc`
-- **Repository:** https://github.com/AkaCurtis/Curtis-Umbrel
-- **Issues:** https://github.com/AkaCurtis/Curtis-Umbrel/issues
+- **Repository:** https://github.com/AkaCurtis/Curtis-nodes
+- **Issues:** https://github.com/AkaCurtis/Curtis-nodes/issues
 - **App Documentation:** [curtis-btc/README.md](curtis-btc/README.md)
 
 ## 📜 License

@@ -12,9 +12,9 @@ description: >-
   quick sync insights, and easy reset tools.
 
 developer: Curtis
-website: https://github.com/AkaCurtis/Curtis-Umbrel
-repo: https://github.com/AkaCurtis/Curtis-Umbrel
-support: https://github.com/AkaCurtis/Curtis-Umbrel/issues
+website: https://github.com/AkaCurtis/Curtis-nodes
+repo: https://github.com/AkaCurtis/Curtis-nodes
+support: https://github.com/AkaCurtis/Curtis-nodes/issues
 port: 3456
 gallery: []
 path: ""

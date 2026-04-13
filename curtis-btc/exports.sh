@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# Export environment variables for Curtis BTC
+#!/usr/bin/env bash
 
 export APP_CURTIS_BTC_ADMIN_PASSWORD="${APP_CURTIS_BTC_ADMIN_PASSWORD:-}"
 export APP_CURTIS_BTC_POLL_SECONDS="${APP_CURTIS_BTC_POLL_SECONDS:-30}"
