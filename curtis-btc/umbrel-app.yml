@@ -22,3 +22,8 @@ icon: icon.svg
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: ""
+
+services:
+  - id: web
+    name: Dashboard
+    description: Curtis BTC dashboard
