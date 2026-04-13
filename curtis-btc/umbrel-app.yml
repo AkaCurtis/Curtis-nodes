@@ -3,48 +3,22 @@ id: curtis-btc
 category: bitcoin
 name: Curtis BTC
 version: "1.0.0"
-tagline: Bitcoin monitoring, perfected ⚡
+tagline: Bitcoin monitoring, perfected
 description: >-
-  Curtis BTC is your ultimate Bitcoin node companion, delivering professional-grade monitoring with style:
-  
-  
-  ✨ **Live Sync Progress** - Beautiful visual progress bars that update in real-time
-  
-  📊 **Clean Dashboard** - Modern UI with blockchain height, connections, and disk stats
-  
-  🔔 **Smart Notifications** - Discord alerts for new blocks and all-time highs
-  
-  💾 **Pruning Control** - Save disk space with configurable blockchain pruning
-  
-  🚀 **Quick Sync** - Optimized monitoring for fast, efficient syncing
-  
-  🔄 **One-Click Reset** - Easy blockchain reindex when you need it
-  
-  
-  Built for node operators who demand excellence. Curtis BTC combines powerful 
-  features with an intuitive interface, making Bitcoin monitoring effortless.
+  Curtis BTC is your ultimate Bitcoin node companion, delivering professional-grade
+  monitoring with style.
+
+  Live sync progress, clean dashboard, Discord alerts, pruning control,
+  quick sync insights, and easy reset tools.
+
 developer: Curtis
 website: https://github.com/AkaCurtis/Curtis-Umbrel
-dependencies:
-  - bitcoin-knots
 repo: https://github.com/AkaCurtis/Curtis-Umbrel
 support: https://github.com/AkaCurtis/Curtis-Umbrel/issues
 port: 3456
-gallery:
-  - icon.svg
+gallery: []
 path: ""
 icon: icon.svg
+defaultUsername: ""
 defaultPassword: ""
-releaseNotes: >-
-  🎉 Welcome to Curtis BTC v1.0.0!
-  
-  ⚡ Real-time sync progress visualization
-  🔔 Discord webhook integration
-  💾 Smart pruning controls
-  🎨 Beautiful modern interface
-  📊 Live statistics dashboard
-widgets:
-  - id: "sync-status"
-    type: "two-stats"
-    refresh: "10s"
-    endpoint: "app:3456/api/widget/stats"
+releaseNotes: ""
