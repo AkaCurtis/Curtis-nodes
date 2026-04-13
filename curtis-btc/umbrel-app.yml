@@ -1,29 +1,18 @@
 manifestVersion: 1
 id: curtis-btc
-category: bitcoin
 name: Curtis BTC
-version: "1.0.0"
-tagline: Bitcoin monitoring, perfected
-description: >-
-  Curtis BTC is your ultimate Bitcoin node companion, delivering professional-grade
-  monitoring with style.
-
-  Live sync progress, clean dashboard, Discord alerts, pruning control,
-  quick sync insights, and easy reset tools.
-
+tagline: Test app
+icon: icon.svg
+category: bitcoin
+version: "1.0.1"
+description: Simple test app for Umbrel discovery.
 developer: Curtis
 website: https://github.com/AkaCurtis/Curtis-nodes
 repo: https://github.com/AkaCurtis/Curtis-nodes
 support: https://github.com/AkaCurtis/Curtis-nodes/issues
-port: 3456
+port: 8080
 gallery: []
 path: ""
-icon: icon.svg
 defaultUsername: ""
 defaultPassword: ""
-releaseNotes: ""
-
-services:
-  - id: web
-    name: Dashboard
-    description: Curtis BTC dashboard
+releaseNotes: "Minimal test app."

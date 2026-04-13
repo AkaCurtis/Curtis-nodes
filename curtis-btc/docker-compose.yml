@@ -4,43 +4,13 @@ services:
   app_proxy:
     environment:
       APP_HOST: curtis-btc_web_1
-      APP_PORT: 3456
+      APP_PORT: 8080
     depends_on:
       - web
 
   web:
-    build:
-      context: ./web
-      dockerfile: Dockerfile
-    init: true
-    restart: on-failure
-    stop_grace_period: 1m
-    volumes:
-      - ${APP_DATA_DIR}:/data
-    environment:
-      ADMIN_PASSWORD: ${APP_CURTIS_BTC_ADMIN_PASSWORD:-}
-      BITCOIN_RPC_USER: ${APP_BITCOIN_KNOTS_RPC_USER:-}
-      BITCOIN_RPC_PASS: ${APP_BITCOIN_KNOTS_RPC_PASS:-}
-      BITCOIN_RPC_HOST: ${APP_BITCOIN_KNOTS_NODE_IP:-}
-      BITCOIN_RPC_PORT: ${APP_BITCOIN_KNOTS_RPC_PORT:-8332}
-
-  watcher:
-    build:
-      context: ./watcher
-      dockerfile: Dockerfile
-    init: true
-    restart: on-failure
-    stop_grace_period: 1m
-    volumes:
-      - ${APP_DATA_DIR}:/data
-    environment:
-      POLL_SECONDS: ${APP_CURTIS_BTC_POLL_SECONDS:-30}
-      DISCORD_WEBHOOK: ${APP_CURTIS_BTC_DISCORD_WEBHOOK:-}
-      NOTIFY_BLOCKS: ${APP_CURTIS_BTC_NOTIFY_BLOCKS:-true}
-      NOTIFY_ATH: ${APP_CURTIS_BTC_NOTIFY_ATH:-true}
-      BITCOIN_RPC_USER: ${APP_BITCOIN_KNOTS_RPC_USER:-}
-      BITCOIN_RPC_PASS: ${APP_BITCOIN_KNOTS_RPC_PASS:-}
-      BITCOIN_RPC_HOST: ${APP_BITCOIN_KNOTS_NODE_IP:-}
-      BITCOIN_RPC_PORT: ${APP_BITCOIN_KNOTS_RPC_PORT:-8332}
-    depends_on:
-      - web
+    image: nginx:alpine
+    restart: unless-stopped
+    expose:
+      - "8080"
+    command: /bin/sh -c "sed -i 's/listen       80;/listen 8080;/' /etc/nginx/conf.d/default.conf && echo '<h1>Curtis BTC Test</h1>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
