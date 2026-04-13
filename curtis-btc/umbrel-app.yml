@@ -4,7 +4,7 @@ name: Curtis BTC
 tagline: Test app
 icon: icon.svg
 category: bitcoin
-version: "1.0.1"
+version: "1.0.12"
 description: Simple test app for Umbrel discovery.
 developer: Curtis
 website: https://github.com/AkaCurtis/Curtis-nodes
