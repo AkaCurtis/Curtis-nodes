@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: web
+      APP_HOST: curtis-btc_web_1
       APP_PORT: 3456
     depends_on:
       - web
