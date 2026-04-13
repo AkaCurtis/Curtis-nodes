@@ -1,0 +1,73 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1d29;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b3d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bitcoinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7931a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffc107;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="chartGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)" stroke="url(#bitcoinGradient)" stroke-width="3"/>
+  
+  <!-- Bitcoin symbol (₿) -->
+  <g transform="translate(100, 85)" filter="url(#glow)">
+    <!-- Vertical lines of ₿ -->
+    <rect x="-3" y="-45" width="6" height="90" fill="url(#bitcoinGradient)" rx="3"/>
+    
+    <!-- Top arc -->
+    <path d="M -20,-25 Q -20,-40 0,-40 Q 20,-40 20,-25 Q 20,-10 0,-10 L -20,-10 Z" 
+          fill="url(#bitcoinGradient)" stroke="url(#bitcoinGradient)" stroke-width="2"/>
+    
+    <!-- Bottom arc -->
+    <path d="M -20,10 L 0,10 Q 25,10 25,25 Q 25,40 0,40 Q -20,40 -20,25 Z" 
+          fill="url(#bitcoinGradient)" stroke="url(#bitcoinGradient)" stroke-width="2"/>
+    
+    <!-- Middle horizontal line -->
+    <line x1="-20" y1="-10" x2="-20" y2="10" stroke="url(#bitcoinGradient)" stroke-width="6"/>
+  </g>
+  
+  <!-- Monitoring chart lines at bottom -->
+  <g transform="translate(0, 150)" opacity="0.9">
+    <!-- Rising chart line -->
+    <polyline points="30,30 50,25 70,20 90,28 110,15 130,18 150,10 170,12" 
+              fill="none" stroke="url(#chartGradient)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Dots on chart -->
+    <circle cx="30" cy="30" r="3" fill="#10b981"/>
+    <circle cx="70" cy="20" r="3" fill="#3b82f6"/>
+    <circle cx="110" cy="15" r="3" fill="#10b981"/>
+    <circle cx="150" cy="10" r="3" fill="#3b82f6"/>
+    <circle cx="170" cy="12" r="3" fill="#10b981"/>
+  </g>
+  
+  <!-- Progress arc indicator (top right) -->
+  <g transform="translate(150, 50)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="3"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="url(#bitcoinGradient)" stroke-width="3"
+            stroke-dasharray="100" stroke-dashoffset="25" 
+            transform="rotate(-90)" stroke-linecap="round"/>
+    <text x="0" y="5" text-anchor="middle" font-size="12" fill="#f7931a" font-weight="bold">%</text>
+  </g>
+  
+  <!-- Pulse effect circles -->
+  <circle cx="100" cy="85" r="55" fill="none" stroke="url(#bitcoinGradient)" stroke-width="1" opacity="0.3"/>
+  <circle cx="100" cy="85" r="65" fill="none" stroke="url(#bitcoinGradient)" stroke-width="1" opacity="0.2"/>
+</svg>

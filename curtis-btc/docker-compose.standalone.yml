@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+  web:
+    image: python:3.11-slim
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    init: true
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}:/data
+      - ./web:/app
+    environment:
+      ADMIN_PASSWORD: ${APP_CURTIS_BTC_ADMIN_PASSWORD:-}
+      BITCOIN_RPC_USER: ${APP_BITCOIN_KNOTS_RPC_USER}
+      BITCOIN_RPC_PASS: ${APP_BITCOIN_KNOTS_RPC_PASS}
+      BITCOIN_RPC_HOST: ${APP_BITCOIN_KNOTS_NODE_IP}
+      BITCOIN_RPC_PORT: ${APP_BITCOIN_KNOTS_RPC_PORT}
+    working_dir: /app
+    command: python app.py
+    ports:
+      - "3457:3456"
+    container_name: curtis-btc_web_1
+
+  watcher:
+    image: python:3.11-slim
+    build:
+      context: ./watcher
+      dockerfile: Dockerfile
+    init: true
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}:/data
+      - ./watcher:/app
+    environment:
+      POLL_SECONDS: ${APP_CURTIS_BTC_POLL_SECONDS:-30}
+      DISCORD_WEBHOOK: ${APP_CURTIS_BTC_DISCORD_WEBHOOK:-}
+      NOTIFY_BLOCKS: ${APP_CURTIS_BTC_NOTIFY_BLOCKS:-true}
+      NOTIFY_ATH: ${APP_CURTIS_BTC_NOTIFY_ATH:-true}
+      BITCOIN_RPC_USER: ${APP_BITCOIN_KNOTS_RPC_USER}
+      BITCOIN_RPC_PASS: ${APP_BITCOIN_KNOTS_RPC_PASS}
+      BITCOIN_RPC_HOST: ${APP_BITCOIN_KNOTS_NODE_IP}
+      BITCOIN_RPC_PORT: ${APP_BITCOIN_KNOTS_RPC_PORT}
+    depends_on:
+      - web
+    working_dir: /app
+    command: python watcher.py
+    container_name: curtis-btc_watcher_1

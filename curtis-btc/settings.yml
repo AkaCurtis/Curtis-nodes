@@ -1,0 +1,50 @@
+# Curtis BTC Settings
+
+CURTIS_BTC_ADMIN_PASSWORD:
+  type: string
+  name: Admin Password
+  description: Password to protect settings (optional)
+  defaultValue: ""
+  required: false
+
+CURTIS_BTC_POLL_SECONDS:
+  type: number
+  name: Poll Interval
+  description: How often to check Bitcoin node status (seconds)
+  defaultValue: 30
+  required: false
+
+CURTIS_BTC_DISCORD_WEBHOOK:
+  type: string
+  name: Discord Webhook URL
+  description: Discord webhook URL for notifications
+  defaultValue: ""
+  required: false
+
+CURTIS_BTC_NOTIFY_BLOCKS:
+  type: boolean
+  name: Notify on New Blocks
+  description: Send Discord notification when new blocks are found
+  defaultValue: true
+  required: false
+
+CURTIS_BTC_NOTIFY_ATH:
+  type: boolean
+  name: Notify on All-Time High
+  description: Send Discord notification for blockchain height ATH
+  defaultValue: true
+  required: false
+
+CURTIS_BTC_PRUNING_ENABLED:
+  type: boolean
+  name: Enable Pruning
+  description: Enable blockchain pruning to save disk space
+  defaultValue: false
+  required: false
+
+CURTIS_BTC_PRUNING_TARGET_GB:
+  type: number
+  name: Pruning Target (GB)
+  description: Target size for pruned blockchain in GB (minimum 5GB)
+  defaultValue: 50
+  required: false
